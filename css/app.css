@@ -1,0 +1,95 @@
+a {
+  color: #fe8914;
+  text-decoration: none;
+}
+
+.custom-button {
+  background-color: #fe8914; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+}
+
+.custom-button:hover {
+  background-color: #fe8914; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: Helvetica, sans-serif;
+  font-size: large;
+}
+
+.one {
+  width: 160px;
+  height: 160px;
+  position: relative;
+}
+
+.two {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+  background-color: #ffffd0;
+}
+
+.CodeMirror {
+    font-size: .8em;
+    height: auto;
+}
+
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+#header_img {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.list-inline {
+    list-style: none;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    padding-left: 0;
+}
+
+.list-inline > li {
+    display: inline-block;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.img-responsive {
+    margin: 0 auto;
+}
+
+div.zoomed {
+  zoom: 0.80;
+  -moz-transform: scale(0.80);
+  -moz-transform-origin: 0 0;
+}
+
+pre.codegen {
+height: 100px;
+overflow-y: scroll;
+}
+

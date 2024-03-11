@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html><head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>IBRL</title>
+
+    <meta name="description" content="Imitation Bootstrapped Reinforcement Learning">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+        for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
+        mixpanel.init('25f4ea45d912e4bfcc86a41d80c217be');
+        mixpanel.track('index.html');
+    </script>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="row mt-4">
+            <h1 class="col-md-12 text-center">
+                <br> Imitation Bootstrapped Reinforcement Learning
+            </h1>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-4 text-center">
+                <ul class="list-inline">
+                <li><a href="https://hengyuan-hu.github.io">Hengyuan Hu</a></li>
+                <li><a href="https://suvirpmirchandani.com">Suvir Mirchandani</a></li>
+                <li><a href="https://dorsa.fyi">Dorsa Sadigh</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-2 text-center">
+                <img src="img/iliad-logo.png" width="100%">
+            </div>
+            <div class="col-md-2 text-center">
+                <img src="img/stanford_logo.png" width="100%">
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-2 text-center">
+            <a href="https://arxiv.org/abs/2311.02198v4" type="button" class="btn custom-button" role="button" target="_blank" rel="noopener noreferrer" style="width: 150px;">
+                <i class="fas fa-file-pdf"></i> Paper
+            </a>
+            </div>
+            <div class="col-md-2 text-center">
+                <a href="" type="button" class="btn custom-button" role="button" target="_blank" rel="noopener noreferrer" style="width: 150px;">
+                <i class="fas fa-robot"></i> Code (Soon)
+                </a>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h4 class="mt-4">
+                    Imitation Bootstrapped Reinforcement Learning (IBRL) is a sample-efficient RL with demonstrations method for policy improvement on <b>real robots</b>.
+                </h4>
+                <br>
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="" style="border-radius: 10px;">
+                    <source src="videos/ibrl-illustration-long-edit.mp4" type="video/mp4">
+                </video>
+                <p class="text-center">Illustration of IBRL</p>
+                <!-- <p style="text-align:center;">
+                    <img src="img/algo_v9.png" width="85%">
+                </p>
+                <p class="text-justify">
+                    <ol>
+                        <li> IBRL first trains an imitation learning (IL) policy on limited demonstrations.</li>
+                        <li> In RL stage, IBRL uses the separate IL policy to propose additional actions during
+                            <ul>
+                                <li>online interaction phase (actor proposal)</li>
+                                <li>training phase (bootstrap proposal)</li>
+                            </ul>
+                        <li> IBRL always takes the actions with higher Q-values in both inference and training time.</li>
+                    </ol>
+                </p> -->
+            <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h3 class="mt-4">
+                    Abstract
+                </h3>
+            </div>
+            <div class="col-md-10 col-lg-10">
+                <p class="text-justify">
+                    Despite the considerable potential of reinforcement learning (RL), robotic control tasks predominantly rely on imitation learning (IL) due to its better sample efficiency. However, it is costly to collect comprehensive expert demonstrations that enable IL to generalize to all possible scenarios, and any distribution shift would require recollecting data for finetuning. Therefore, RL is appealing if it can build upon IL as an efficient autonomous self-improvement procedure. We propose <b>imitation bootstrapped reinforcement learning (IBRL)</b>, a novel framework for sample-efficient RL with demonstrations that first trains an IL policy on the provided demonstrations and then uses it to propose alternative actions for both online exploration and bootstrapping target values. Compared to prior works that oversample the demonstrations or regularize RL with an additional imitation loss, IBRL is able to utilize high quality actions from IL policies since the beginning of training, which greatly accelerates exploration and training efficiency. We evaluate IBRL on 6 simulation and 3 real-world tasks spanning various difficulty levels. IBRL significantly outperforms prior methods and the improvement is particularly more prominent in harder tasks.
+                </p>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h3 class="mt-4">
+                    Result Highlights
+                </h3>
+                <!-- <br> -->
+                <p style="text-align:center;">
+                    <img src="img/real-v4-p2.png" width="85%"><br>
+                    Illustrations of each task and the variation in the initialization of each task.
+                </p>
+                <p style="text-align:center;">
+                    <img src="img/real-v4-p1.png" width="85%"><br>
+                    IBRL <b>consistently outperforms</b> RLPD and RFT in all 3 tasks, with a larger gap on the more complex tasks.<br>
+                    RLPD (RL with prior data): add demonstrations to RL replay buffer and oversample them during RL training.<br>
+                    RFT (regularized fine-tuning): first pretrain the actor with BC and then run RL with BC loss added to the actor loss for regularization.
+                </p>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h3 class="mt-4">
+                    Rollouts of IBRL Checkpoints
+                </h3>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h4 class="mt-2">
+                    Open the Drawer
+                </h4>
+                <p>(Refresh to sync the start time)</p>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="" style="border-radius: 10px;">
+                    <source src="videos/drawer-0min.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/drawer-8min.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/drawer-16mins.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/drawer-24mins.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h4 class="mt-2">
+                    Hang the Cloth
+                </h4>
+                <p>(Refresh to sync the start time)</p>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/hang-short 1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/hang-short 2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="row mt-2 justify-content-md-center">
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/hang-short 3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-5 text-center">
+                <video id="v0" width="100%" preload="metadata" playsinline="" muted="" autoplay="" loop="", style="border-radius: 10px;">
+                    <source src="videos/hang-short 4.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-10 col-lg-10">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-10">
+                <h3 class="mt-4">
+                    Result in Simulation
+                </h3>
+                <p style="text-align:center;">
+                    <img src="img/metaworld.png" width="95%"><br>
+                    <b>Performance on Meta-World.</b> IBRL outperforms both MoDem and RLPD on all 4 tasks.<br>
+                    Actor Dropout is a regularization techinique independent of IBRL.<br>
+                    RFT achieves similar performance to IBRL but requires tuning to find proper weight for BC loss.<br>
+                    The horizontal dashed lines indicate the average success rate of the BC policies used in IBRL.
+                </p>
+                <br>
+                <p style="text-align:center;">
+                    <img src="img/robomimic.png" width="95%"><br>
+                    <b>Performance on Robomimic.</b>
+                    IBRL significantly outperforms RFT and RLPD on all 4 scenarios.<br>
+                    The gap between IBRL and baselines is especially large on the more difficult Square task.<br>
+                    The horizontal dashed lines are the score of BC policies in IBRL.
+                </p>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-md-10 col-lg-10">
+                <h3>
+                    Citation
+                </h3>
+<pre>
+@misc{hu2023imitation,
+    title={Imitation Bootstrapped Reinforcement Learning},
+    author={Hengyuan Hu and Suvir Mirchandani and Dorsa Sadigh},
+    year={2023},
+    eprint={2311.02198},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG}
+}
+</pre>
+            <hr>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center mt-4">
+            <div class="col-md-10 col-lg-10">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    We would like to thank members of ILIAD lab at Stanford for valuable feedback and discussions.
+                    This project was sponsored by JP Morgan Faculty Award, NSF Awards 2125511 and 1941722, the Office of Naval Research (ONR) and the Toyota Research Institute.
+                    The website template is from <a href="https://robot-help.github.io">Robots that Ask for Help</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>hljs.highlightAll();</script>
+</body></html>
